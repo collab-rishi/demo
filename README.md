@@ -1,15 +1,21 @@
-# Introduction
+# E-logistics Tendering 
 
-**ELogistics-Tendering** is a digital platform designed to optimize and streamline the logistics tendering process. It seamlessly connects Third-Party Logistics (3PL) providers with Logistics Service Providers (LSPs), enabling efficient bidding, real-time shipment tracking, and transparent communication. The platform reduces manual work, enhances operational efficiency, and fosters better collaboration across the logistics ecosystem.
+![Dia](./flowchart_png)
 
-## :ledger: Index
+## 📖 Table of contents
 
-- [Key Features](#key-features)
+- [Introduction](#introduction)
+- [Features](#features)
+- [Architecture](#architecture)
 - [Project Structure](#file_folder-project-structure)
 - [API Endpoints](#api-endpoints)
 
+## Introduction
 
-## Key Features
+**ELogistics-Tendering** is a digital platform designed to optimize and streamline the logistics tendering process. It seamlessly connects Third-Party Logistics (3PL) providers with Logistics Service Providers (LSPs), enabling efficient bidding, real-time shipment tracking, and transparent communication. The platform reduces manual work, enhances operational efficiency, and fosters better collaboration across the logistics ecosystem.
+
+
+## Features
 
 - 🔗 **3PL & LSP Integration**  
   Effortlessly connect 3PL providers with LSPs to improve coordination and workflow.
@@ -25,6 +31,12 @@
 
 - ✅ **Confirmation & Acknowledgment**  
   Simplified confirmation of transport agreements with performance tracking and accountability.
+
+## Architecture
+
+
+![Diagram](https://miro.medium.com/v2/resize:fit:1400/1*IBE7JQ2wRZfkp87PP-_U-w.jpeg)
+
 
 ## :file_folder: Project Structure
 
