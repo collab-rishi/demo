@@ -1,6 +1,6 @@
 # E-logistics Tendering 
 
-![Dia](./flowchart_png)
+![Dia](./flowchart.png)
 
 ## 📖 Table of contents
 
