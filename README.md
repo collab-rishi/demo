@@ -43,7 +43,7 @@
 ## Architecture
 
 
-![Diagram](https://miro.medium.com/v2/resize:fit:1400/1*IBE7JQ2wRZfkp87PP-_U-w.jpeg)
+![Diagram](./sb2_1.png)
 
 
 ## :file_folder: Project Structure
