@@ -80,6 +80,22 @@ src/
 
 <br>
 
+## 🛠️ Tech Stack
+
+- **Language**: Java 21
+- **Framework**: Spring Boot 3.4.5
+- **Build Tool**: Maven
+- **Database**: MySQL 8.0
+- **Messaging**: Apache Kafka
+- **Notifications**: Firebase Admin SDK
+- **Communication**: Twilio SDK (SMS)
+- **Logging**: Log4j2
+- **Testing**: Spring Boot Test (JUnit)
+- **Dev Tools**: Spring Boot DevTools
+
+<br>
+<br>
+
 ## Setup and Installation
 
 <br>
@@ -117,6 +133,7 @@ cd ELogistics-Tendering
 
 **Step 2:  Configure the database**
 
+<br>
 
 Create a MySQL database and update your credentials in src/main/resources/application.properties:
 
@@ -131,6 +148,8 @@ spring.datasource.password=your_db_password
 
 **Step 3: Start Kafka and Zookeeper**
 
+<br>
+
 Make sure Zookeeper and Kafka are running on localhost:2181 and localhost:9092 respectively.
 
 Build the project:
@@ -144,7 +163,9 @@ mvn clean install
 <br>
 
 **Step 4: Run the application**
+
 <br>
+
 ```
 mvn spring-boot:run
 ```
@@ -230,7 +251,7 @@ If you see these, the application has started successfully.
 <br>
 <br>
 
-### Auth
+## Auth
 
 Handles user registration, login, and OTP-based authentication.
 
@@ -367,7 +388,7 @@ ELogisticsTendering is up and running.
 <br>
 <br>
 
-### PasswordReset
+## PasswordReset
 
 Handles password reset via email and OTP.
 
@@ -442,7 +463,7 @@ Handles password reset via email and OTP.
 <br>
 <br>
 
-### User List
+## User List
 
 Provides APIs to fetch user lists based on roles.
 
@@ -476,7 +497,7 @@ Provides APIs to fetch user lists based on roles.
 <br>
 <br>
 
-### LSP Responses
+## LSP Responses
 
 Manages responses from Logistics Service Providers (LSP) to tenders.
 
@@ -561,7 +582,7 @@ Manages responses from Logistics Service Providers (LSP) to tenders.
 <br>
 <br>
 
-### Tender Management
+## Tender Management
 
 APIs for creating and retrieving tenders submitted by 3PL companies.
 
