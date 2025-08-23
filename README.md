@@ -4,7 +4,9 @@
 <img src="./elog_logo.png" alt="Logo" width="500"/>
 </p>
 
----
+
+<br>
+
 ###  What is E-logistics Tendering ?
 
 
@@ -12,39 +14,37 @@
 
 ![Dia](./flowchart.png)
 
-
+<br>
 
 
 ## 📖 Table of contents
 
 - [Features](#features)
-- [Architecture](#architecture)
 - [Project Structure](#file_folder-project-structure)
+- [Architecture](#architecture)
+- [Setup and Installation](#setup-and-installation)
 - [API Endpoints](#api-endpoints)
 
+<br>
 
-## Features
+##  Features
 
-- 🔗 **3PL & LSP Integration**  
+-  📝 **3PL & LSP Integration**  
   Effortlessly connect 3PL providers with LSPs to improve coordination and workflow.
 
-- 📝 **Digital Tendering Process**  
+-  💻 **Digital Tendering Process**  
   Fully digital system for creating, submitting, and managing transportation service tenders.
 
-- 📦 **Bid Management**  
+-  📊 **Bid Management**  
   Streamlined and transparent bid handling—from creation through to selection and negotiation.
 
-- 📍 **Real-Time Tracking**  
+-  📍 **Real-Time Tracking**  
   Live monitoring of shipment locations and delivery statuses.
 
-- ✅ **Confirmation & Acknowledgment**  
+-  ✅ **Confirmation & Acknowledgment**  
   Simplified confirmation of transport agreements with performance tracking and accountability.
 
-## Architecture
-
-
-![Diagram](./sb2_1.png)
-
+<br>
 
 ## :file_folder: Project Structure
 
@@ -55,31 +55,128 @@ src/
 └── main/
     ├── java/
     │   └── tendering/
-    │       ├── config/              # Configuration classes
-    │       ├── controller/          # REST controllers to handle HTTP requests
-    │       ├── dto/                 # Data Transfer Objects (request/response models)
-    │       ├── exception/           # Custom exceptions and global error handlers
-    │       ├── kafka/               # Kafka configuration or message consumers/producers
-    │       ├── model/               # JPA entity classes mapped to database tables
-    │       ├── repository/          # Spring Data JPA interfaces for DB operations
-    │       ├── service/             # Business logic layer
-    │       └── TenderingApplication.java  # Main Spring Boot application class
+    │       ├── config/              
+    │       ├── controller/          
+    │       ├── dto/                 
+    │       ├── exception/          
+    │       ├── kafka/               
+    │       ├── model/               
+    │       ├── repository/         
+    │       ├── service/             
+    │       └── TenderingApplication.java  
     │
     └── resources/
-        ├── application.properties   # Application configuration
-        └── ...                      # Static resources
+        ├── application.properties 
+        └── ...                      
 
 ```
 
----
+<br>
+
+##  Architecture
+
+
+![Diagram](./sb2_1.png)
+
+<br>
+
+## Setup and Installation
+
+<br>
+
+  ###   Prerequisites
+
+  Ensure the following are installed on your system:
+  
+  - ☕ Java 21 
+  
+  - 🔧 Maven 3.8+
+  
+  - 🐬 MySQL 8+
+  
+  - 📨 Apache Kafka 3.x
+  
+  - 🧰 Git
+
+ <br>
+
+### Installation
+
+<br>
+
+**Step 1: Clone the repository**
+
+<br>
+
+```
+git clone https://github.com/kundansinghdev/ELogistics-Tendering.git
+cd ELogistics-Tendering
+```
+
+<br>
+
+**Step 2:  Configure the database**
+
+
+Create a MySQL database and update your credentials in src/main/resources/application.properties:
+
+<br>
+
+```
+spring.datasource.url=jdbc:mysql://localhost:3306/your_database_name
+spring.datasource.username=your_db_user
+spring.datasource.password=your_db_password
+```
+<br>
+
+**Step 3: Start Kafka and Zookeeper**
+
+Make sure Zookeeper and Kafka are running on localhost:2181 and localhost:9092 respectively.
+
+Build the project:
+
+<br>
+
+```
+mvn clean install
+```
+
+<br>
+
+**Step 4: Run the application**
+<br>
+```
+mvn spring-boot:run
+```
+
+<br>
+
+Once started, the application will be available at:
+<br>
+```
+http://localhost:9090/
+```
+<br>
+
+✅ Verify Setup
+
+Check console logs for:
+<br>
+```
+Tomcat started on port 9090
+Started ELogisticsTenderingApplication
+```
+<br>
+
+If you see these, the application has started successfully.
+
+<br>
+<br>
 
 ## API Endpoints
 
-Refer to the full API Endpoint Index below for categorized routes.
 
-## 📚 API Endpoint Index
-
-### 🔐 Auth
+### Auth
 
 | Method | Endpoint                                                  | Description                      |
 | ------ | --------------------------------------------------------- | -------------------------------- |
@@ -90,9 +187,9 @@ Refer to the full API Endpoint Index below for categorized routes.
 | POST   | [`/auth/login-with-mobile`](#-post-authlogin-with-mobile) | Sends OTP for mobile login       |
 | POST   | [`/auth/verify-otp`](#-post-authverify-otp)               | Verifies OTP and logs in user    |
 
----
+<br>
 
-### 🔐 Password Reset
+### Password Reset
 
 | Method | Endpoint                                                            | Description                                |
 | ------ | ------------------------------------------------------------------- | ------------------------------------------ |
@@ -100,9 +197,9 @@ Refer to the full API Endpoint Index below for categorized routes.
 | POST   | [`/auth/verify-reset-otp`](#-post-authverify-reset-otp)             | Verifies password reset OTP                |
 | POST   | [`/auth/reset-password`](#-post-authreset-password)                 | Sets a new password after OTP verification |
 
----
+<br>
 
-### 👥 User List
+### User List
 
 | Method | Endpoint                       | Description                                     |
 | ------ | ------------------------------ | ----------------------------------------------- |
@@ -110,9 +207,9 @@ Refer to the full API Endpoint Index below for categorized routes.
 | GET    | [`/users/lsp`](#-get-userslsp) | Retrieves all LSP (Logistics Service Providers) |
 | GET    | [`/users/3pl`](#-get-users3pl) | Retrieves all 3PL (Third-Party Logistics) users |
 
----
+<br>
 
-### 📥 LSP Tender Responses
+### LSP Tender Responses
 
 | Method | Endpoint                                                                        | Description                            |
 | ------ | ------------------------------------------------------------------------------- | -------------------------------------- |
@@ -121,24 +218,25 @@ Refer to the full API Endpoint Index below for categorized routes.
 | POST   | [`/api/lsp/responses/filter`](#-post-apilspresponsesfilter)                     | Filter responses by company & status   |
 | POST   | [`/api/lsp/responses/filter-by-tender`](#-post-apilspresponsesfilter-by-tender) | Filter responses by tender and company |
 
----
+<br>
 
-#### 📄 Tender Management (3PL)
+#### Tender Management (3PL)
 
 | Method | Endpoint                                         | Description                        |
 | ------ | ------------------------------------------------ | ---------------------------------- |
 | POST   | [`/3PL/tenders/create`](#-post-3pltenderscreate) | Create a new tender                |
 | POST   | [`/3PL/tenders/search`](#-post-3pltenderssearch) | Search tenders by company & status |
 
----
+<br>
+<br>
 
-### 🔐 Auth
+### Auth
 
 Handles user registration, login, and OTP-based authentication.
 
----
+<br>
 
-#### ✅ `GET /auth/ping`
+#### `GET /auth/ping`
 
 - **Purpose**: Health check endpoint
 - **Response**:
@@ -147,9 +245,9 @@ Handles user registration, login, and OTP-based authentication.
 ELogisticsTendering is up and running.
 ```
 
----
+<br>
 
-#### 📝 `POST /auth/signup`
+#### `POST /auth/signup`
 
 - **Purpose**: Initiates the signup process by sending an OTP to the user's mobile
 - **Request Body** (`application/json`):
@@ -172,8 +270,10 @@ ELogisticsTendering is up and running.
 - `400 Bad Request`: Validation error
 
 - `500 Internal Server Error`: Unexpected failure
+  
+<br>
 
-#### 🔑 `POST /auth/verify-signup-otp`
+#### `POST /auth/verify-signup-otp`
 
 - **Purpose**: Verifies OTP and completes account creation
 
@@ -194,7 +294,9 @@ ELogisticsTendering is up and running.
 
 - `500 Internal Server Error`: Server error
 
-#### 🔐 `POST /auth/login`
+<br>
+
+#### `POST /auth/login`
 
 - **Purpose**: Logs in the user using email and password
 
@@ -217,7 +319,9 @@ ELogisticsTendering is up and running.
 
 - `500 Internal Server Error`: Login error
 
-#### 📲 `POST /auth/login-with-mobile`
+<br>
+
+#### `POST /auth/login-with-mobile`
 
 - **Purpose**: Sends OTP to the user's registered mobile for login
 
@@ -237,7 +341,9 @@ ELogisticsTendering is up and running.
 
 - `500 Internal Server Error`: Sending OTP failed
 
-#### 🔓 `POST /auth/verify-otp`
+  <br>
+
+#### `POST /auth/verify-otp`
 
 - **Purpose**: Verifies OTP and logs in the user via mobile
 
@@ -258,15 +364,16 @@ ELogisticsTendering is up and running.
 
 - `500 Internal Server Error`: Verification failed
 
----
+<br>
+<br>
 
-### 🔐 PasswordReset
+### PasswordReset
 
 Handles password reset via email and OTP.
 
----
+<br>
 
-#### 📧 `POST /auth/request-password-reset`
+#### `POST /auth/request-password-reset`
 
 - **Purpose**: Initiates a password reset by sending an OTP to the user's registered email.
 - **Request Body** (`application/json`):
@@ -285,7 +392,9 @@ Handles password reset via email and OTP.
 
 - `500 Internal Server Error`: Failed to send OTP
 
-#### ✅ `POST /auth/verify-reset-otp`
+  <br>
+
+#### `POST /auth/verify-reset-otp`
 
 - **Purpose**: Verifies the OTP sent to the user's email before resetting the password.
 
@@ -306,7 +415,9 @@ Handles password reset via email and OTP.
 
 - `500 Internal Server Error`: Verification failed
 
-#### 🔁 `POST /auth/reset-password`
+  <br>
+
+#### `POST /auth/reset-password`
 
 - **Purpose**: Sets a new password after OTP verification.
 
@@ -328,48 +439,50 @@ Handles password reset via email and OTP.
 
 - `500 Internal Server Error`: Password reset failed
 
----
+<br>
+<br>
 
-### 👥 User List
+### User List
 
 Provides APIs to fetch user lists based on roles.
 
----
+<br>
 
-#### 📄 `GET /users/all`
+#### `GET /users/all`
 
 - **Purpose**: Retrieves all registered users.
 - **Responses**:
   - `200 OK`: Returns a list of all users
   - `500 Internal Server Error`: Fetching failed
 
----
+<br>
 
-#### 📦 `GET /users/lsp`
+#### `GET /users/lsp`
 
 - **Purpose**: Retrieves all users with the role `LSP` (Logistics Service Providers).
 - **Responses**:
   - `200 OK`: List of LSP users
   - `500 Internal Server Error`: Fetching failed
 
----
+<br>
 
-#### 🚚 `GET /users/3pl`
+#### `GET /users/3pl`
 
 - **Purpose**: Retrieves all users with the role `3PL` (Third-Party Logistics Providers).
 - **Responses**:
   - `200 OK`: List of 3PL users
   - `500 Internal Server Error`: Fetching failed
 
----
+<br>
+<br>
 
-### 📥 LSP Responses
+### LSP Responses
 
 Manages responses from Logistics Service Providers (LSP) to tenders.
 
----
+<br>
 
-#### 📄 `GET /api/lsp/responses?companyName=AcmeLogistics`
+#### `GET /api/lsp/responses?companyName=AcmeLogistics`
 
 - **Purpose**: Fetch all responses submitted by a specific company.
 - **Query Param**:
@@ -378,9 +491,9 @@ Manages responses from Logistics Service Providers (LSP) to tenders.
   - `200 OK`: List of responses.
   - `204 No Content`: No responses found for the company.
 
----
+<br>
 
-#### 🛠️ `PUT /api/lsp/responses/reply/{tenderNo}?companyName=AcmeLogistics`
+#### `PUT /api/lsp/responses/reply/{tenderNo}?companyName=AcmeLogistics`
 
 - **Purpose**: Submit or update a tender reply by the LSP.
 - **Path Variable**:
@@ -403,7 +516,9 @@ Manages responses from Logistics Service Providers (LSP) to tenders.
 
 - `404 Not Found`: Tender not found for the company.
 
-#### 🔍 `POST /api/lsp/responses/filter`
+  <br>
+
+#### `POST /api/lsp/responses/filter`
 
 - **Purpose**: Filter LSP responses by company and status.
 
@@ -424,7 +539,9 @@ Manages responses from Logistics Service Providers (LSP) to tenders.
 
 - `400 Bad Request`: Invalid status value.
 
-#### 🔎 `POST /api/lsp/responses/filter-by-tender`
+  <br>
+
+#### `POST /api/lsp/responses/filter-by-tender`
 
 - **Purpose**: Fetch responses to a particular tender made by a specific company.
 
@@ -441,15 +558,16 @@ Manages responses from Logistics Service Providers (LSP) to tenders.
 
 - `200 OK`: List of LSP responses with fields: `lspCompanyName`, `bidPrice`, `estimatedArrivalDate`, `lspMessage`
 
----
+<br>
+<br>
 
-### 📄 Tender Management
+### Tender Management
 
 APIs for creating and retrieving tenders submitted by 3PL companies.
 
----
+<br>
 
-#### 📝 `POST /3PL/tenders/create?companyName=MegaLogistics`
+#### `POST /3PL/tenders/create?companyName=MegaLogistics`
 
 - **Purpose**: Creates a new tender for a 3PL company.
 - **Query Parameter**:
@@ -473,7 +591,9 @@ APIs for creating and retrieving tenders submitted by 3PL companies.
 
 - `400 Bad Request`: Invalid data or creation failure.
 
-#### 🔍 `POST /3PL/tenders/search`
+<br>
+
+#### `POST /3PL/tenders/search`
 
 - **Purpose**: Retrieves tenders created by a company based on their status.
 
